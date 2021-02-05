@@ -24,4 +24,8 @@ class HelloController extends Controller
     public function returnView1(){
         return view('welcome');
     }
+
+    public function branchTest(){
+        return ('test');
+    }
 }
