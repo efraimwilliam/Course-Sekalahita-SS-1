@@ -6,19 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class MataKuliah extends Model
+class Jadwal extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'mata_kuliah';
+    protected $table = 'jadwal';
     protected $primaryKey = 'id';
     public $incrementing = true;
     protected $timestamp = true;
-    protected $fillable = ['nama_mata_kuliah', 'sks'];
+    protected $fillable = ['hari', 'mata_kuliah_id'];
 
-    //one to many from jadwal model
-    public function jadwal(){
-        return $this->hasMany(Jadwal::class, 'mata_kuliah_id');
+    //inverse one to many
+    public function matakuliah(){
+        return $this->belongsTo(MataKuliah::class, 'mata_kuliah_id');
     }
+
 }

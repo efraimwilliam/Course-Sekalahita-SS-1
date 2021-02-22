@@ -69,6 +69,40 @@ route::get('/matakuliah/nama', [MataKuliahController::class, 'getNamaMataKuliah'
 route::get('mahasiswa/5', [MahasiswaController::class, 'get5Mahasiswa']);
 
 
+//create mata kuliah
+route::get('/matakuliah/create', [MataKuliahController::class, 'createMataKuliah']);
+
+//create mata kuliah with eloquent
+route::get('/matakuliah/create1', [MataKuliahController::class, 'createMataKuliah1']);
+
+//create mata kuliah with eloquent model
+route::get('/matakuliah/create2', [MataKuliahController::class, 'createMataKuliah2']);
+
+//update mata kuliah
+route::get('/matakuliah/update', [MataKuliahController::class, 'updateMataKuliah']);
+
+//update mata kuliah with eloquent
+route::get('/matakuliah/update1', [MataKuliahController::class, 'updateMataKuliah1']);
+
+//update mata kuliah with eloquent model
+route::get('/matakuliah/update2', [MataKuliahController::class, 'updateMataKuliah2']);
+
+//delete matakuliah
+route::get('/matakuliah/delete', [MataKuliahController::class, 'deleteMataKuliah']);
+
+//delete matakuliah with eloqeunt
+route::get('/matakuliah/delete1', [MataKuliahController::class, 'deleteMataKuliah1']);
+
+//soft delete
+route::get('/matakuliah/delete2', [MataKuliahController::class, 'deleteMataKuliah2']);
+
+//get data with one to many relationship
+route::get('/matakuliah/getdata', [MataKuliahController::class, 'getDataMataKuliah']);
+
+//get data with one to many inverse relationship
+route::get('/matakuliah/getdata1', [MataKuliahController::class, 'getDataJadwal']);
+
+
 
 
 

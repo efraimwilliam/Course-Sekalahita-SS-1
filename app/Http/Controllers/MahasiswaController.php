@@ -18,6 +18,7 @@ class MahasiswaController extends Controller
     //get 5 data mahasiswa
     public function get5Mahasiswa(){
         $mahasiswa_5 = DB::table('mahasiswa')->where('id', '<', 6)->get();
+        $mahasiswa_6 = DB::table('mahasiswa')->limit(5)->get();
         return [($mahasiswa_5)];
     }
 }
