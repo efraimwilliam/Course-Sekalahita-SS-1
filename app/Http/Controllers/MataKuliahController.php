@@ -15,6 +15,13 @@ class MataKuliahController extends Controller
         return [($mata_kuliah)];
     }
 
+    //get all with eloquent
+    public function getMatkul(){
+        $mata_kuliah = MataKuliah::get();
+
+        return $mata_kuliah;
+    }
+
     //get nama mata kuliah
     public function getNamaMataKuliah(){
         $nama_mata_kuliah = DB::table('mata_kuliah')->select('nama_mata_kuliah')->get();

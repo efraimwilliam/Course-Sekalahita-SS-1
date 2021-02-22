@@ -48,6 +48,10 @@ route::get('/view/{id}',[HelloController::class, 'returnView']);
 route::get('/dosen/putu', [DosenController::class, 'getDosenWhere']);
 
 
+//get all data with eloquent
+route::get('/matkul', [MataKuliahController::class, 'getMatkul']);
+
+
 //Tugas
 
 //Get all dosen
