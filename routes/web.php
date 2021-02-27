@@ -141,6 +141,7 @@ Route::get('/dosen/create', [DosenController::class, 'createDosen']);
 //Update Data Mahasiswa
 Route::get('/mahasiswa/update', [MahasiswaController::class, 'updateMahasiswa']);
 
+//get Data Mahasiswa
 Route::Get('mahasiswa/getdata', [MahasiswaController::class, 'getDataMahasiswa']);
 
 });
