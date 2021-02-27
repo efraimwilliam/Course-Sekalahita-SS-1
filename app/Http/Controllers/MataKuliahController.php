@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\MataKuliah;
 use App\Models\Jadwal;
+use App\Models\Mahasiswa;
 
 class MataKuliahController extends Controller
 {
@@ -125,5 +126,19 @@ class MataKuliahController extends Controller
             $matkul = $getdata -> matakuliah()->get();
 
             return $matkul;
+        }
+
+        //attach(insert) mahasiswa
+        public function attachMahasiswa(){
+            $attach = MataKuliah::find(1)->mahasiswa()->attach([1,2,3]);
+
+            return $attach;
+        }
+
+        //detach(delete) mahasiswa
+        public function detachMahasiswa(){
+            $detach = Matakuliah::find(1)->mahasiswa()->detach([1,2,3]);
+
+            return $detach;
         }
 }

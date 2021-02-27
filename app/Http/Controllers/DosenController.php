@@ -38,5 +38,15 @@ class DosenController extends Controller
         return ($dosen1);
     }
 
+    //create data dosen
+    public function createDosen(){
+        $dosen = new Dosen;
+        $dosen -> nama ="Albert";
+        $dosen -> alamat = "jl asing";
+        $dosen -> nik = "111234";
+        $dosen -> save();
+
+        return $dosen;
+    }
 
 }

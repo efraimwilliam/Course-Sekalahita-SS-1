@@ -11,6 +11,11 @@ class Dosen extends Model
 
     protected $table = 'dosen';
     protected $primaryKey = 'id';
-    protected $incrementing = true;
+    public $incrementing = true;
     protected $timestamp = true;
+
+    //one to many dosen mahasiswa
+    public function mahasiswa1(){
+        return $this->hasMany(Mahasiswa::class, 'dosen_id');
+    }
 }

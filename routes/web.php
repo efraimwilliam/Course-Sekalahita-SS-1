@@ -5,7 +5,7 @@ use App\Http\Controllers\HelloController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
-
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +52,7 @@ route::get('/dosen/putu', [DosenController::class, 'getDosenWhere']);
 route::get('/matkul', [MataKuliahController::class, 'getMatkul']);
 
 
-//Tugas
+//Tugas 1
 
 //Get all dosen
 route::get('/dosen', [DosenController::class,'getDosen']);
@@ -107,6 +107,43 @@ route::get('/matakuliah/getdata', [MataKuliahController::class, 'getDataMataKuli
 route::get('/matakuliah/getdata1', [MataKuliahController::class, 'getDataJadwal']);
 
 
+//get matkul 
+route::get('/mahasiswa/matkul', [MahasiswaController::class, 'getDataMataKuliah']);
+
+//attach matkul
+route::get('/mahasiswa/attach', [MahasiswaController::class, 'attachMatkul']);
+
+//attach mahasiswa
+route::get('matakuliah/attach', [MataKuliahController::class, 'attachMahasiswa']);
+
+//detach matkul
+route::get('mahasiswa/detach', [MahasiswaController::class, 'detachMatkul']);
+
+//detach mahasiswa
+route::get('matakuliah/detach', [MataKuliahController::class, 'detachMahasiswa']);
+
+//sync matakul
+route::get('mahasiswa/sync', [MahasiswaController::class, 'syncMatkul']);
+
+
+
+//RESOURCH CONTROLLER
+Route::resource('/resource', TestController::class);
+
+
+//TUGAS 3
+
+route::prefix('tugas')->group(function (){
+
+//create Dosen
+Route::get('/dosen/create', [DosenController::class, 'createDosen']);
+
+//Update Data Mahasiswa
+Route::get('/mahasiswa/update', [MahasiswaController::class, 'updateMahasiswa']);
+
+Route::Get('mahasiswa/getdata', [MahasiswaController::class, 'getDataMahasiswa']);
+
+});
 
 
 
