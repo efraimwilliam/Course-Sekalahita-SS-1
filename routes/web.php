@@ -6,6 +6,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\TestController;
+use App\Http\controllers\MataKuliahBaruController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -146,9 +147,4 @@ Route::Get('mahasiswa/getdata', [MahasiswaController::class, 'getDataMahasiswa']
 
 });
 
-
-
-
-
-//Trash
-route::get('/dosen/table',[DosenController::class, 'getDosenTable']);
+Route::resource('/matkulr', MataKuliahBaruController::class);

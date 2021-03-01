@@ -4,22 +4,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-
-<form action ="/resource" method='POST'>
+<h3>Isi Mata Kuliah Anda :)</h3>
+<p></p>
+<form action ="/matkulr" method='POST'>
     @csrf
   <div class="form-group">
-    <label for="exampleInputEmail1">Data diri anda</label>
-        <input type="text" class="form-control" aria-describedby="nama" placeholder="Nama" name="nama">
-    </div>
-    <div class= "form-group">
-        <input type="text" class="form-control" aria-describedby="nama" placeholder="Alamat" name="alamat">
-    </div>
-    <div class= "form-group">
-        <input type="text" class="form-control" aria-describedby="nama" placeholder="Nim" name="nim">
-    </div>
-
+    <label for="exampleInputEmail1">Mata Kuliah</label>
+    <input type="text" class="form-control" name="matkul" aria-describedby="emailHelp" placeholder="Masukan Mata Kuliah Anda">
   </div>
-  <small id="emailHelp" class="form-text text-muted">Ini adalah data anda</small>
+  <div class="form-group">
+    <label for="exampleInputPassword1">SKS</label>
+    <input type="text" class="form-control" name="sks" placeholder="Password">
+  </div>
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
