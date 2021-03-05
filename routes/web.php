@@ -7,6 +7,8 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\TestController;
 use App\Http\controllers\MataKuliahBaruController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,7 @@ use App\Http\controllers\MataKuliahBaruController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -26,7 +28,7 @@ Route::get('/barang/{id}/detail/{detail}', function($id, $detail){
     return('nama barang dengan id '.$id.'dengan detail '.$detail);
 });
 
-Route::prefix('login')->group(function (){
+Route::prefix('asd')->middleware('auth')->group(function (){
     route::get('/admin', function (){
         return('selamat datang admin');
     });
@@ -148,3 +150,28 @@ Route::Get('mahasiswa/getdata', [MahasiswaController::class, 'getDataMahasiswa']
 });
 
 Route::resource('/matkulr', MataKuliahBaruController::class);
+
+
+//middleware routes
+Route::get('/', function(){
+    return view('welcome');
+})->middleware('auth');
+
+
+Route::get('/test', function(){
+    return view('welcome');
+})->middleware('william');
+
+Route::get('/test2', function(){
+    return view('welcome');
+})->middleware('william:perempuan');
+
+Route::get('/registers', [RegisterController::class, 'registerakun']);
+
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/logins', [LoginController::class, 'loginpage']);
+
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/logout', [LoginController::class, 'logout']);
